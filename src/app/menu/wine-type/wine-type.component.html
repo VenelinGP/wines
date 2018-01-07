@@ -1,0 +1,36 @@
+<div class="sidenav">
+    <div id="title">
+        <a id="back" (click)="goBack()">&#60; Back</a>
+        <h3>{{title | uppercase}}</h3>
+    </div>
+    <div class="buttons">
+        <div class="btn-group">
+            <button #locat type="button" (click)="getWineByLocation()" class="btn btn-default active">Location</button>
+            <button #variet type="button" (click)="getWineByVarietal()" class="btn btn-default">Grape Varietal</button>
+        </div>
+    </div>
+    <div class="region" *ngIf="isLocation">
+        <ul>
+            <li #wineLoc *ngFor="let wineLocation of wineLocationSet">
+                <a (click)="getRegion(wineLocation)">{{wineLocation}}</a>
+                <span>></span>
+                <div class="innertype" *ngIf="wineLocation == country">
+                    <ul>
+                        <li *ngFor="let region of wineRegionSet">
+                            <a (click)="getRegionByCountry(region)" onclick="closeNav()">{{region}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="region" *ngIf="isVarietal">
+        <ul>
+            <li *ngFor="let wineVarietal of wineVarietalSet">
+                <a class="type" (click)="getVarietal(wineVarietal)" onclick="closeNav()">{{wineVarietal}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="mask"></div>
+<app-wine-details-byregion [typeWine]="selectedTypeWine" [title]="title" [isLocation]="isLocation" [isVarietal]="isVarietal" [country]="country" [region]="region" [varietal]="varietal"></app-wine-details-byregion>

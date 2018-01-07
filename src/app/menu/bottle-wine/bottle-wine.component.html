@@ -1,0 +1,13 @@
+<div class="sidenav">
+    <div id="title">
+        <a id="back" (click)="goBack()">&#60; Back</a>
+        <h3>{{title | uppercase}}</h3>
+    </div>
+    <ul>
+        <li *ngFor="let typeWine of typeWines" [class.selected]="typeWine === selectedTypeWine" (click)="onSelect(typeWine)">
+            <a class="type" [routerLink]="[ '/bottlewine', typeWine.id]">{{typeWine.name}}</a>
+        </li>
+    </ul>
+</div>
+<div id="mask"></div>
+<app-wine-details-byregion [title]="title" [typeWine]="selectedTypeWine"></app-wine-details-byregion>

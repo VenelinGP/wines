@@ -1,0 +1,28 @@
+<div #mySidenav id="mySidenav" class="sidenav">
+    <div>
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <h3 id="title">{{title | uppercase}}</h3>
+        <ul>
+            <li>
+                <a class="main" [routerLink]="['/winedeals']"><img src="../../../assets/glass-26px.png">WINE DEALS</a>
+            </li>
+            <li>
+                <a class="main" [routerLink]="['/bottlewine']"><img src="../../../assets/bottle-26px.png">BOTTLE WINE</a>
+            </li>
+            <li>
+                <button type="button" class="btn btn-default" (click)="halfMagnum()"><img src="../../../assets/glass-26px.png">HALF + MAGNUM</button>
+            </li>
+            <li *ngIf="isHiddenHalfMagnum">
+                <a class="hm" routerLink="/halfmagnum/{{bottleType[0].id}}"><img src="../../../assets/bottle-26px.png">{{bottleType[0].name | uppercase}}</a>
+            </li>
+            <li *ngIf="isHiddenHalfMagnum">
+                <a class="hm" routerLink="/halfmagnum/{{bottleType[1].id}}"><img src="../../../assets/bottle-26px.png">{{bottleType[1].name | uppercase}}</a>
+            </li>
+            <li>
+                <a class="main" routerLink="/bytheglass"><img src="../../../assets/glass-26px.png" alt="">BY THE GLASS</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="mask"></div>
+<app-wine-details-deals></app-wine-details-deals>

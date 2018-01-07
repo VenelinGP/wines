@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wines</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/c4f8a1fb88.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+</head>
+
+<body>
+    <app-root></app-root>
+    <script>
+        /* Set the width of the side navigation to 350px */
+        function openNav() {
+            document.getElementById("mask").style.width = "100%";
+            document.getElementById("mask").style.height = "300%";
+            document.getElementsByClassName("sidenav")[0].style.left = "0";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mask").style.width = "0%";
+            document.getElementById("mask").style.height = "0%";
+            document.getElementsByClassName("sidenav")[0].style.left = "-350px";
+        }
+
+        function togleSearch() {
+            let x = document.getElementById("search-box");
+
+            if (x.style.display === "none" || x.style.display === '') {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
