@@ -43,6 +43,7 @@ export class BottleWineComponent implements OnInit {
     })
   }
   goBack(): void {
+    console.log(this.location.path());
     this.location.back();
   }
 }

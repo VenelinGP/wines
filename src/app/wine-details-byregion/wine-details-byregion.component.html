@@ -26,7 +26,7 @@
         <div class="logo">
             <img src="../assets/wines-background.png">
         </div>
-        <div class="type">
+        <div class="type" *ngIf="typeWine">
             <span>{{typeWine.name | uppercase}}</span>
         </div>
         <ul>

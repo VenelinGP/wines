@@ -10,7 +10,7 @@ import { TypeWine } from "../models/typewine";
   styleUrls: ['./wine-details-byregion.component.css']
 })
 export class WineDetailsByregionComponent implements OnInit {
-  @Input() title: string;
+  @Input() title: string = 'Venko';
   @Input() typeWine: TypeWine;
   @Input() isLocation: boolean;
   @Input() country: string;
@@ -33,12 +33,13 @@ export class WineDetailsByregionComponent implements OnInit {
   }
 
   getWines(){
+    let wineType ='';
     this.winesService.getWines()
     .subscribe(data => {
       data.forEach(wine => {
-        let wineType = wine.wine_data.wine_type.name;
+        wineType = wine.wine_data.wine_type.name;
         if(wineType){
-          if(wine.wine_data.bottle_size == 750 && wine.in_stock > 0 && wineType == this.typeWine.name && wine.item_type_id != undefined){
+          if(wine.wine_data.bottle_size == 750 && wine.in_stock > 0 && wine.item_type_id != undefined && wineType == this.typeWine.name ){
             this.wines.push(wine);
           }
         }
