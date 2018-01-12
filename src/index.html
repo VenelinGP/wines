@@ -15,16 +15,36 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 
 <body onload="closeNav()">
     <app-root></app-root>
     <script>
         /* Set the width of the side navigation to 350px */
+        // $(document).ready(
+        //     function openNav(){
+        //         $("mask").width
+        //     }
+        // )
         function openNav() {
             document.getElementById("mask").style.width = "100%";
             document.getElementById("mask").style.height = "300%";
-            document.getElementsByClassName("sidenav")[0].style.left = "0";
+            let menu = document.getElementsByClassName("sidenav")[0];
+            menu.style.left = '-350px';
+
+            let pos = -360;
+            let id = setInterval(frame, 10);
+
+            function frame() {
+                if (pos == 0) {
+                    clearInterval(id);
+                } else {
+                    pos += 15;
+                    menu.style.left = pos + 'px';
+                }
+            }
         }
 
         /* Set the width of the side navigation to 0 */

@@ -11,14 +11,14 @@ import { InMemoryDataService }  from './data/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { BottleWineComponent } from './menu/bottle-wine/bottle-wine.component';
 import { ByTheGlassComponent } from './menu/by-the-glass/by-the-glass.component';
 import { HalfMagnumComponent } from './menu/half-magnum/half-magnum.component';
 import { MainMenuComponent } from './menu/main-menu/main-menu.component';
 import { WineDealsComponent } from './menu/wine-deals/wine-deals.component';
 import { WineTypeComponent } from './menu/wine-type/wine-type.component';
-import { WineDetailsComponent } from './wine-details/wine-details.component';
+import { WineDetailsComponent } from './components/wine-details/wine-details.component';
 
 import { MenuService } from './services/menu.service';
 import { WinesService } from "./services/wines.service";
@@ -27,11 +27,11 @@ import { SortByNamePipe } from './pipes/sort-by-name.pipe';
 import { SortByPricePipe } from './pipes/sort-by-price.pipe';
 import { SortByVintagePipe } from './pipes/sort-by-vintage.pipe';
 import { SortByRatingPipe } from './pipes/sort-by-rating.pipe';
-import { WineDetailsByregionComponent } from './wine-details-byregion/wine-details-byregion.component';
+import { WineDetailsByregionComponent } from './components/wine-details-byregion/wine-details-byregion.component';
 import { RegionFilterPipe } from './pipes/region-filter.pipe';
 import { VarietalFilterPipe } from './pipes/varietal-filter.pipe';
-import { WineDetailsBybottleComponent } from './wine-details-bybottle/wine-details-bybottle.component';
-import { WineDetailsDealsComponent } from './wine-details-deals/wine-details-deals.component';
+import { WineDetailsBybottleComponent } from './components/wine-details-bybottle/wine-details-bybottle.component';
+import { WineDetailsDealsComponent } from './components/wine-details-deals/wine-details-deals.component';
 
 @NgModule({
   imports: [
