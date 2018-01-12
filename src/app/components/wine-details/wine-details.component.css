@@ -1,0 +1,66 @@
+#details {
+    margin-top: 35px;
+    padding: 15px 0;
+    background-color: #38000F;
+}
+
+.wineName {
+    padding-top: 25px;
+    font-size: 1.8em;
+    text-align: center
+}
+
+.content {
+    padding: 35px 0;
+}
+
+.col-1-3 {
+    width: 40%;
+    display: inline-block;
+}
+
+.col-2-3 {
+    position: relative;
+    top: -100px;
+    width: 45%;
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+.bin {
+    font-size: 1.6em;
+    text-align: center;
+    padding: 5px
+}
+
+.image {
+    vertical-align: top;
+    text-align: center;
+    margin: 0 auto;
+    padding: 35px;
+}
+
+.info {
+    margin-left: 130px;
+}
+
+.info div {
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 5px;
+    color: #DA9B00;
+}
+
+.info>div span {
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-default {
+    color: white;
+    background-color: #A2002B;
+    border-color: transparent;
+    border-radius: 0;
+    margin-left: 130px;
+    padding: 15px 70px;
+}

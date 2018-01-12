@@ -5,7 +5,6 @@ import { WineItem } from "../models/wine-item";
   name: 'sortByName'
 })
 export class SortByNamePipe implements PipeTransform {
-
   transform(items: WineItem[], sort: string): any {
     if(sort == 'isAsc'){
       if(items){

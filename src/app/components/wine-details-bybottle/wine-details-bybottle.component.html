@@ -1,0 +1,43 @@
+<div class="bgcomponent">
+    <div class="title">{{title}}</div>
+    <div class="nav">
+        <div class="ordering">
+            <div class="inline">
+                <div class="btn-group">
+                    <button type="button" (click)="sortByName()" class="btn btn-default">A - Z</button>
+                    <button type="button" (click)="sortByPrice()" class="btn btn-default">Price</button>
+                    <button type="button" (click)="sortByVintage()" class="btn btn-default">Vintage</button>
+                    <button type="button" (click)="sortByRating()" class="btn btn-default">Rating</button>
+                </div>
+                <div class="inline">
+                    <div class="caption">
+                        <div class="ratings">
+                            <p>Show/Hide</p>
+                            <p>Ratings</p>
+                        </div>
+                        <label class="switch">
+                        <input type="checkbox" (change)="isHidden($event)">
+                        <span class="slider round"></span>
+                    </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <img src="../assets/wines-background.png">
+    </div>
+    <div class="type" *ngIf="typeWine">
+        <span>{{typeWine.name | uppercase}}</span>
+    </div>
+    <ul>
+        <li *ngFor="let wine of (wines | typeFilter:typeWine | sortByName:sortedByName | sortByPrice:sortedByPrice | sortByVintage:sortedByVintage | sortByRating: sortedByRating )">
+            <a>
+                <div class="col-1-4 id">{{wine.item_id}}</div>
+                <div class="col-2-4">{{wine.name}}, {{wine.wine_data.year}}, {{wine.wine_data.wine_type.name}} </div>
+                <div class="col-3-4">${{wine.price}}</div>
+                <div class="col-3-4" *ngIf="isHiddenRatings"> R: {{wine.wine_data.average_rating}} </div>
+            </a>
+        </li>
+    </ul>
+</div>

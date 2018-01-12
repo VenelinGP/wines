@@ -7,8 +7,6 @@ import { WineItem } from "../models/wine-item";
 export class VarietalFilterPipe implements PipeTransform {
 
   transform(items: WineItem[], selectedVarietal: string, isTrue: boolean): any {
-    console.log("v",selectedVarietal, isTrue);
-
     let filteredWines = [];
     let filteredByVarietal = [];
     if(isTrue){

@@ -127,7 +127,6 @@ export class WineTypeComponent implements OnInit, OnDestroy {
     this.varietal = '';
   }
   getVarietal(varietal: string){
-    console.log(varietal);
     this.varietal = varietal;
   }
   onSelect(): void {
