@@ -32,6 +32,7 @@ import { RegionFilterPipe } from './pipes/region-filter.pipe';
 import { VarietalFilterPipe } from './pipes/varietal-filter.pipe';
 import { WineDetailsBybottleComponent } from './components/wine-details-bybottle/wine-details-bybottle.component';
 import { WineDetailsDealsComponent } from './components/wine-details-deals/wine-details-deals.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -66,7 +67,8 @@ import { WineDetailsDealsComponent } from './components/wine-details-deals/wine-
     RegionFilterPipe,
     VarietalFilterPipe,
     WineDetailsBybottleComponent,
-    WineDetailsDealsComponent
+    WineDetailsDealsComponent,
+    LoginComponent
   ],
   providers: [
     MenuService,
